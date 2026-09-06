@@ -1,0 +1,15 @@
+{
+  "name": "@hour-chain/filecoin",
+  "version": "0.1.0",
+  "description": "Public Filecoin evidence and archive integration for hOUR Chain creator-rights infrastructure",
+  "type": "module",
+  "private": true,
+  "license": "MIT OR Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": "./src/index.js",
+  "scripts": {
+    "test": "node --test"
+  }
+}
