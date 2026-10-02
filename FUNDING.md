@@ -1,6 +1,6 @@
 # Funding — hOUR Chain
 
-**Witching Hour Music and Art Collective**  
+**Witching Hour Music**  
 **Contact:** fletchervaughn@witchinghourmac.com · [witchinghourmac.com](https://witchinghourmac.com)  
 **Published for review:** 2026-09-27
 
