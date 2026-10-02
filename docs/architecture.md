@@ -7,7 +7,8 @@
 | Creator application | Register work, collect contributors, review evidence, approve rights and splits | Reference workflow only |
 | Evidence bundle | Deterministic manifest linking work metadata, contributors, approvals, and content identifiers | Schema, library, CLI, tests |
 | Filecoin | Durable storage, retrieval verification, and integrity evidence | Synapse/Filecoin Onchain Cloud adapter; local/test and Calibration support |
-| Base | Authorized approvals, settlement actions, and auditable receipts | hOUR Chain hooks and reference integration |
+| Solana (outside this repo) | Passkey-verified contributor approvals and creator-rights attestations ([`hour-chain-solana`](https://github.com/witchinghourartcollective/hour-chain-solana), hOUR Chain ADR-0004) | None in this repo; evidence bundles may reference Solana consent records |
+| Base | Payments, settlement actions, and auditable settlement receipts | hOUR Chain hooks and reference integration |
 | Private services | Authentication, encrypted creator content, commercial operations, and hosted product features | Interfaces only; unrelated proprietary code excluded |
 
 ## Privacy rule
