@@ -18,8 +18,9 @@ hOUR Chain is creator-rights infrastructure: provenance, access, and settlement 
 
 **Phase 1 stack**
 
-- **Base** — canonical EVM settlement and compact onchain commitments  
-- **Lightning / Solana adapters** — payment and ecosystem reach without forcing a single rail  
+- **Base** — payments/settlement and canonical EVM records (planned)  
+- **Solana** — primary chain for contributor approvals/consent and attestations, in progress in [`hour-chain-solana`](https://github.com/witchinghourartcollective/hour-chain-solana) (hOUR Chain ADR-0004)  
+- **Lightning adapter** — planned payment rail  
 - **Filecoin** — durable, retrievable evidence layer (Open Grant #2182)  
 - **Post-quantum-native design** — signature suites and envelopes built so algorithms stay replaceable under governance; no component claims end-to-end PQC while a settlement rail is not
 
@@ -67,6 +68,7 @@ Fletcher’s deep reading on highly enriched uranium and the nuclear fuel cycle 
 
 - Protocol: https://github.com/witchinghourartcollective/hOUR-Chain  
 - Filecoin grant delivery: https://github.com/witchinghourartcollective/hour-chain-filecoin  
+- Solana consent and attestations: https://github.com/witchinghourartcollective/hour-chain-solana  
 - Grant issue: https://github.com/filecoin-project/devgrants/issues/2182  
 
 ---

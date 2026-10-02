@@ -14,7 +14,7 @@ This repository is the public Filecoin integration boundary for hOUR Chain and t
 2. Contributor evidence and content-addressed asset references are attached.
 3. Contributors review and approve rights or payment splits.
 4. Filecoin provides durable evidence storage and retrieval verification.
-5. Base records authorized approvals and settlement receipts.
+5. Contributor approvals (passkey consent) are attested on Solana via [`hour-chain-solana`](https://github.com/witchinghourartcollective/hour-chain-solana) (in progress), and payments and settlement receipts are recorded on Base (planned). See hOUR Chain [ADR-0004](https://github.com/witchinghourartcollective/hOUR-Chain/blob/main/docs/ADR-0004-solana-consent-base-payments.md).
 
 ## Why this is a separate repository
 
@@ -30,6 +30,12 @@ This is the public pre-funding baseline. It includes:
 - a dependency-free test suite.
 
 Filecoin storage, retrieval, Synapse/Filecoin Onchain Cloud, Calibration, Base hooks, and the creator pilot are planned grant milestones. They are not represented as complete today.
+
+## Related repositories
+
+- Protocol: [hOUR-Chain](https://github.com/witchinghourartcollective/hOUR-Chain)
+- Filecoin evidence (this repo): [hour-chain-filecoin](https://github.com/witchinghourartcollective/hour-chain-filecoin)
+- Solana consent and attestations: [hour-chain-solana](https://github.com/witchinghourartcollective/hour-chain-solana) (pre-alpha)
 
 ## Quick start
 
