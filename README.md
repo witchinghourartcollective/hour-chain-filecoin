@@ -91,6 +91,6 @@ The SPDX expression is `MIT OR Apache-2.0`.
 
 ## Contact
 
-Witching Hour Music and Art Collective  
+Witching Hour Music  
 [witchinghourmac.com](https://witchinghourmac.com)  
 fletchervaughn@witchinghourmac.com
