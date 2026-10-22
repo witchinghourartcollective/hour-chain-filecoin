@@ -8,6 +8,17 @@ The larger product idea is simple: the hours behind creative work should not dis
 
 This repository is the public Filecoin integration boundary for hOUR Chain and the delivery repository for [Filecoin Open Grant proposal #2182](https://github.com/filecoin-project/devgrants/issues/2182).
 
+
+## hOURs and real creative time
+
+**Spending hOURS like currency: make the real hours behind creative work visible, attributable, and compensable.**
+
+The hOUR Chain (HBC) product model connects hOURs to actual hours spent producing, engineering, rehearsing, performing, designing, and doing other creative work. Participants should be able to document their time, attach supporting evidence, mutually approve contributions, and connect approved records to agreed fees, rights splits, or revenue-sharing terms.
+
+An approved hour is a contribution record. Its monetary value and any associated rights depend on the participants' agreement. The time record, rights agreement, payment obligation, and settlement receipt must remain distinct and traceable. This concept does not establish a token conversion rate or change the current token model.
+
+This is a product and implementation requirement; the complete time-recording and approval workflow is not claimed as implemented. See [Real-hours contribution model](https://github.com/witchinghourartcollective/hOUR-Chain/blob/main/docs/TIME-CONTRIBUTIONS.md) for the workflow, integration boundaries, and future GCUL adapter requirements.
+
 ## Product workflow
 
 1. A creator registers a song, image, video, performance, design, or other work.
