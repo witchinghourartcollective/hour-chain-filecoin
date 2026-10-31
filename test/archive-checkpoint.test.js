@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import { archiveCheckpointHash, createArchiveCheckpoint, verifyArchiveChain } from "../src/index.js";
 
 test("raw signed evidence survives archival without reserialization", () => {
@@ -16,4 +17,25 @@ test("raw signed evidence survives archival without reserialization", () => {
   assert.equal(verifyArchiveChain([a, b], {}).ok, false);
   assert.throws(() => createArchiveCheckpoint([{ name: "x", content }, { name: "x", content }]), /duplicate/);
   assert.throws(() => createArchiveCheckpoint([{ name: "x", content: "not bytes" }]), /bytes/);
+});
+
+test("rejecting asynchronous artifact resolvers fail without an unhandled rejection", () => {
+  const script = `
+    import assert from 'node:assert/strict';
+    import { archiveCheckpointHash, createArchiveCheckpoint, verifyArchiveChain } from './src/index.js';
+    const content = Buffer.from('original bytes');
+    const checkpoint = createArchiveCheckpoint([{ name: 'record', content }]);
+    for (const resolveArtifact of [
+      async () => content,
+      async () => { throw new Error('download failed'); },
+      () => ({ then(resolve, reject) { reject(new Error('thenable failed')); } }),
+    ]) {
+      const result = verifyArchiveChain([checkpoint], { expectedHead: archiveCheckpointHash(checkpoint), resolveArtifact });
+      assert.equal(result.ok, false);
+      assert.match(result.error, /Async artifact resolvers are unsupported/);
+    }
+    await new Promise(resolve => setImmediate(resolve));
+  `;
+  const child = spawnSync(process.execPath, ['--unhandled-rejections=strict', '--input-type=module', '-e', script], { encoding: 'utf8' });
+  assert.equal(child.status, 0, child.stderr);
 });
