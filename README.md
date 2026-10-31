@@ -25,7 +25,7 @@ This is a product and implementation requirement; the complete time-recording an
 2. Contributor evidence and content-addressed asset references are attached.
 3. Contributors review and approve rights or payment splits.
 4. Filecoin provides durable evidence storage and retrieval verification.
-5. Contributor approvals (passkey consent) are attested on Solana via [`hour-chain-solana`](https://github.com/witchinghourartcollective/hour-chain-solana) (in progress), and payments and settlement receipts are recorded on Base (planned). See hOUR Chain [ADR-0004](https://github.com/witchinghourartcollective/hOUR-Chain/blob/main/docs/ADR-0004-solana-consent-base-payments.md).
+5. Contributor approvals and settlement records target the Cosmos EVM hOUR Chain L1. The earlier Solana consent/Base payments plan is superseded by [ADR-0005](https://github.com/witchinghourartcollective/hOUR-Chain/blob/main/docs/ADR-0005-cosmos-evm-l1.md); the Solana adapter is paused. The L1 remains a devnet scaffold.
 
 ## Why this is a separate repository
 
@@ -37,10 +37,11 @@ This is the public pre-funding baseline. It includes:
 
 - a deterministic evidence-bundle manifest and digest utility;
 - a minimal verifier for manifest integrity;
+- exact-byte archive checkpoints with linked renewal history and pinned-head integrity verification (see [Evidence renewal](docs/EVIDENCE-RENEWAL.md));
 - the proposed system boundary and grant scope; and
 - a dependency-free test suite.
 
-Filecoin storage, retrieval, Synapse/Filecoin Onchain Cloud, Calibration, Base hooks, and the creator pilot are planned grant milestones. They are not represented as complete today.
+Filecoin storage, retrieval, Synapse/Filecoin Onchain Cloud, Calibration, chain hooks, and the creator pilot are planned grant milestones. Checkpoint integrity does not establish signer authenticity, trusted time, or actual Filecoin storage.
 
 ## Related repositories
 
