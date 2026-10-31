@@ -53,6 +53,11 @@ export function verifyArchiveChain(checkpoints, { expectedHead, resolveArtifact 
       if (checkpoint.previous !== previous) throw new Error("Broken archive chain");
       for (const item of checkpoint.artifacts) {
         const content = resolveArtifact(item);
+        if (content !== null && (typeof content === "object" || typeof content === "function") &&
+            typeof content.then === "function") {
+          Promise.resolve(content).catch(() => {});
+          throw new TypeError("Async artifact resolvers are unsupported");
+        }
         if (!(content instanceof Uint8Array) || content.byteLength !== item.bytes || hash(content) !== item.digest) {
           throw new Error(`Missing or modified artifact: ${item.name}`);
         }
