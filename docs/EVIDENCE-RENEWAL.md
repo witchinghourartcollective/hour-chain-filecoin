@@ -28,5 +28,7 @@ Renew by creating a new checkpoint whose `previous` is the prior head. Old
 artifacts remain byte-for-byte intact; no re-signing or rewriting of the original
 is implied. A Filecoin CID remains an adapter concern, distinct from this digest.
 
-Current architecture is Cosmos EVM L1 per hOUR-Chain ADR-0005. The earlier Solana
-consent/Base settlement plan is superseded; this utility is chain-independent.
+Current architecture is Cosmos EVM L1 per hOUR-Chain ADR-0005. ADR-0008 restores Solana
+consent as an active major workstream alongside Cosmos EVM and existing Base
+integrations; this utility remains chain-independent. See STORAGE-RUNTIME.md for
+the upload/retrieval boundary and its remaining production gates.
