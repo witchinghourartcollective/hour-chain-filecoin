@@ -46,8 +46,18 @@ node scripts/calibration-canary.mjs /secure/managed-synapse-factory.mjs /secure/
 The CLI uploads only 256 random public test bytes, requests two copies, verifies
 retrieval and writes a mode-0600 receipt without overwriting an existing file.
 It can incur testnet storage operations. Re-run retrieval from the saved receipt
-after a service restart before marking recovery verified. A partial upload may
-already be committed; exceptions preserve `uploadResult` or `receipt` for manual
+after a service restart before marking recovery verified:
+
+```sh
+node scripts/calibration-retrieve.mjs /secure/managed-synapse-factory.mjs /secure/new-canary-receipt.json
+```
+
+The retrieval command accepts only a successful Calibration canary receipt. It
+never calls upload, changes the saved receipt, or emits retrieved bytes. The factory
+must initialize without deposits or allowance changes. Capture its JSON result
+separately; successful retrieval does not establish PDP, retention or consent.
+
+A partial upload may already be committed; exceptions preserve `uploadResult` or `receipt` for manual
 reconciliation. Do not blindly retry paid uploads. Build durable jobs, deduplication,
 retry/backoff, retention renewals and monitoring around the adapter before production.
 
