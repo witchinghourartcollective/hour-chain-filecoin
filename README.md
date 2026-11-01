@@ -107,3 +107,7 @@ The SPDX expression is `MIT OR Apache-2.0`.
 Witching Hour Music  
 [witchinghourmac.com](https://witchinghourmac.com)  
 fletchervaughn@witchinghourmac.com
+
+## SocialFi integration
+
+`createSocialFiEvidenceBundle` converts validated hOUR SocialFi drafts into evidence manifests without asserting consent, payments or live storage. See [SocialFi handoff](docs/SOCIALFI.md).
