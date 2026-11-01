@@ -13,4 +13,6 @@ test('SocialFi proposals become archive manifests without claiming signatures or
   assert.deepEqual(bundle.manifest.socialfi.proposal, draft);
   assert.throws(() => createSocialFiEvidenceBundle({ ...draft, payload: { ...draft.payload, minutes: 900 } }));
   assert.throws(() => createSocialFiEvidenceBundle({ ...draft, status: 'settled' }));
+  Object.defineProperty(draft,'toJSON',{value:()=>({status:'settled'})});
+  assert.throws(() => createSocialFiEvidenceBundle(draft));
 });

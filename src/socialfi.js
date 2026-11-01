@@ -3,7 +3,7 @@ import { createEvidenceBundle } from './evidence-bundle.js';
 
 /** A public-metadata archive handoff, not proof of consent, payment or storage. */
 export function createSocialFiEvidenceBundle(draft) {
-  assertSocialFiDraft(draft);
+  draft = assertSocialFiDraft(draft);
   const { envelope, payload } = draft;
   return createEvidenceBundle({
     schemaVersion: '0.1.0', workId: typeof payload.workId === 'string' ? payload.workId : envelope.subject,
