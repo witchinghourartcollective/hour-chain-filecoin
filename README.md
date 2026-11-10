@@ -94,3 +94,13 @@ The SPDX expression is `MIT OR Apache-2.0`.
 Witching Hour Music  
 [witchinghourmac.com](https://witchinghourmac.com)  
 fletchervaughn@witchinghourmac.com
+
+## Local verification report
+
+Save a bundle returned by `createEvidenceBundle` as JSON, then run:
+
+```bash
+npm run verify -- /path/to/bundle.json
+```
+
+The command runs offline and prints a JSON summary without manifest contents. Exit codes: 0 = matching manifest digest; 1 = invalid bundle or digest mismatch; 2 = usage/read/JSON error. It does not retrieve or verify the referenced media. See [data flow and remaining gaps](docs/data-flow.md).

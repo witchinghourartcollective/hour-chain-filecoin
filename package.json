@@ -10,6 +10,7 @@
   },
   "exports": "./src/index.js",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "verify": "node src/verify-cli.js"
   }
 }
