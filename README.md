@@ -19,6 +19,8 @@ An approved hour is a contribution record. Its monetary value and any associated
 
 This is a product and implementation requirement; the complete time-recording and approval workflow is not claimed as implemented. See [Real-hours contribution model](https://github.com/witchinghourartcollective/hOUR-Chain/blob/main/docs/TIME-CONTRIBUTIONS.md) for the workflow, integration boundaries, and future GCUL adapter requirements.
 
+GCUL status: accounts and a test transfer are verified on the no-value `integration-testing` network; the adapter is not implemented. See [GCUL integration-testing status](https://github.com/witchinghourartcollective/hOUR-Chain/blob/main/docs/GCUL-INTEGRATION-TESTING.md).
+
 ## Product workflow
 
 1. A creator registers a song, image, video, performance, design, or other work.
